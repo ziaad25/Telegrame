@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroundColor">#f0f0f0</color>
+    <color name="addMember">#389de3</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backgroundTopConstrain">#5a8fbb</color>
+    <color name="TextStatusColor">#848b93</color>
+    <color name="textNameColor">#222222</color>
+    <color name="black">#FF000000</color>
+
+</resources>

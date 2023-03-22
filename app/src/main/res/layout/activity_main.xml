@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topConstrain"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/backgroundTopConstrain" />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageChannel"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/man"
+        app:roundPercent="100" />
+
+    <ImageView
+        android:id="@+id/arrowBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/moreBtn" />
+
+    <ImageView
+        android:id="@+id/moreBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/baseline_more_vert_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/editBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintEnd_toStartOf="@id/moreBtn"
+        app:layout_constraintTop_toTopOf="@+id/moreBtn" />
+
+    <TextView
+        android:id="@+id/tvNameChannel"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="اسم القناة"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tvNumberofMember"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="4 أعضاء"
+        android:textColor="#DBFFFFFF"
+        android:textSize="@dimen/statusMember" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notifyConstrain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topConstrain"
+        tools:ignore="MotionLayoutInvalidSceneFileReference">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/TextStatusColor"
+            app:layout_constraintBottom_toBottomOf="@+id/statusNotify"
+            app:layout_constraintStart_toEndOf="@id/switchid"
+            app:layout_constraintTop_toTopOf="@+id/tvNotify" />
+
+        <Switch
+            android:id="@+id/switchid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@id/notifyConstrain"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+        <TextView
+            android:id="@+id/tvNotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الإشعارات"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/notifyConstrain"
+            app:layout_constraintTop_toTopOf="@id/notifyConstrain" />
+
+        <TextView
+            android:id="@+id/statusNotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="مفعلة"
+            android:textColor="@color/TextStatusColor"
+            app:layout_constraintEnd_toEndOf="@id/tvNotify"
+            app:layout_constraintTop_toBottomOf="@id/tvNotify" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/memberConstrain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notifyConstrain">
+
+        <ImageView
+            android:id="@+id/imAddMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_person_add_24"
+            app:layout_constraintEnd_toEndOf="@id/memberConstrain"
+            app:layout_constraintTop_toTopOf="@id/memberConstrain"
+            app:tint="@color/addMember" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="إضافة أعضاء"
+            android:textColor="@color/addMember"
+            app:flow_horizontalBias="45"
+            app:layout_constraintBottom_toBottomOf="@+id/imAddMember"
+            app:layout_constraintEnd_toStartOf="@+id/imAddMember"
+            app:layout_constraintTop_toTopOf="@+id/imAddMember" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagePerson"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/man"
+            app:layout_constraintEnd_toEndOf="@id/memberConstrain"
+            app:layout_constraintTop_toBottomOf="@id/imAddMember"
+            tools:layout_editor_absoluteX="353dp"
+            tools:layout_editor_absoluteY="326dp" />
+
+        <TextView
+            android:id="@+id/tvNamePerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Ziaad Aboelela"
+            android:textColor="@color/textNameColor"
+            app:layout_constraintEnd_toStartOf="@+id/imagePerson"
+            app:layout_constraintTop_toTopOf="@id/imagePerson" />
+
+        <TextView
+            android:id="@+id/tvStatusPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="متصل"
+            android:textColor="@color/addMember"
+            app:layout_constraintBottom_toBottomOf="@+id/imagePerson"
+            app:layout_constraintEnd_toEndOf="@+id/tvNamePerson"
+            app:layout_constraintTop_toBottomOf="@id/tvNamePerson" />
+
+        <TextView
+            android:id="@+id/tvPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مشرف"
+
+            android:textColor="@color/addMember"
+            app:layout_constraintStart_toStartOf="@id/memberConstrain"
+            app:layout_constraintTop_toTopOf="@+id/tvNamePerson" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagePerson2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/man"
+            app:layout_constraintEnd_toEndOf="@id/memberConstrain"
+            app:layout_constraintTop_toBottomOf="@id/imagePerson" />
+
+        <TextView
+            android:id="@+id/tvNamePerson2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Ziaad Aboelela"
+            android:textColor="@color/textNameColor"
+            app:layout_constraintEnd_toStartOf="@+id/imagePerson2"
+            app:layout_constraintTop_toTopOf="@id/imagePerson2" />
+
+        <TextView
+            android:id="@+id/tvStatusPerson2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="متصل"
+            android:textColor="@color/addMember"
+            app:layout_constraintBottom_toBottomOf="@+id/imagePerson2"
+            app:layout_constraintEnd_toEndOf="@+id/tvNamePerson2"
+            app:layout_constraintTop_toBottomOf="@id/tvNamePerson2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fileConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/memberConstrain">
+
+        <LinearLayout
+            android:id="@+id/lineButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/fileConstraint"
+            app:layout_constraintStart_toStartOf="@id/fileConstraint"
+            app:layout_constraintTop_toTopOf="@id/fileConstraint">
+
+            <Button
+                android:id="@+id/btnMedia"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:text="Media"
+                android:textColor="@color/addMember" />
+
+            <Button
+                android:id="@+id/btnFile"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:text="File"
+                android:textColor="@color/TextStatusColor" />
+
+            <Button
+                android:id="@+id/btnLink"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:text="Links"
+                android:textColor="@color/TextStatusColor" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

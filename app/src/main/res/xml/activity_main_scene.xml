@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <!--start-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/topConstrain"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/imageChannel"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/topConstrain"
+            motion:layout_constraintStart_toStartOf="@+id/arrowBackBtn"
+            motion:layout_constraintTop_toBottomOf="@+id/arrowBackBtn">
+            <CustomAttribute
+                motion:attributeName="roundPercent"
+                motion:customDimension="@dimen/round_corner" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvNameChannel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            motion:layout_constraintStart_toEndOf="@id/imageChannel"
+            motion:layout_constraintTop_toTopOf="@+id/imageChannel">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="8sp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvNumberofMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/imageChannel"
+            motion:layout_constraintStart_toStartOf="@+id/tvNameChannel"
+            motion:layout_constraintTop_toBottomOf="@+id/tvNameChannel" />
+
+    </ConstraintSet>
+
+    <!--end-->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/imageChannel"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            motion:layout_constraintBottom_toBottomOf="@id/arrowBackBtn"
+            motion:layout_constraintStart_toEndOf="@id/arrowBackBtn"
+            motion:layout_constraintTop_toTopOf="@id/arrowBackBtn">
+            <CustomAttribute
+                motion:attributeName="roundPercent"
+                motion:customDimension="@dimen/round_corner" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/topConstrain"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvNameChannel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            motion:layout_constraintStart_toEndOf="@id/imageChannel"
+            motion:layout_constraintTop_toTopOf="@+id/imageChannel">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="8sp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvNumberofMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/imageChannel"
+            motion:layout_constraintStart_toStartOf="@+id/tvNameChannel"
+            motion:layout_constraintTop_toBottomOf="@+id/tvNameChannel" />
+    </ConstraintSet>
+
+    <!--final end-->
+    <ConstraintSet
+        android:id="@+id/finalEnd"
+        motion:deriveConstraintsFrom="@+id/start">
+        <Constraint
+            android:id="@+id/imageChannel"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/topConstrain"
+            motion:layout_constraintEnd_toEndOf="@+id/topConstrain"
+            motion:layout_constraintStart_toStartOf="@+id/topConstrain"
+            motion:layout_constraintTop_toTopOf="@+id/topConstrain">
+            <CustomAttribute
+                motion:attributeName="roundPercent"
+                motion:customDimension="0dp" />
+            <CustomAttribute
+                motion:attributeName="scaleType"
+                motion:methodName="center" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/topConstrain"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvNumberofMember"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="4 أعضاء"
+            android:textColor="#DBFFFFFF"
+            android:textSize="@dimen/statusMember"
+            motion:layout_constraintBottom_toBottomOf="@id/topConstrain"
+            motion:layout_constraintStart_toStartOf="@id/tvNameChannel"
+
+            />
+
+        <Constraint
+            android:id="@+id/tvNameChannel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="اسم القناة"
+            android:textColor="@color/white"
+            motion:layout_constraintBottom_toTopOf="@id/tvNumberofMember"
+            motion:layout_constraintStart_toStartOf="@id/topConstrain">
+
+        </Constraint>
+
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@+id/start">
+
+        <OnSwipe motion:touchAnchorId="@+id/imageChannel" />
+
+    </Transition>
+
+
+    <Transition
+        motion:constraintSetEnd="@+id/finalEnd"
+        motion:constraintSetStart="@+id/start">
+
+        <OnSwipe
+            motion:touchAnchorId="@+id/imageChannel"
+            motion:dragDirection="dragDown"
+            motion:touchAnchorSide="bottom" />
+    </Transition>
+</MotionScene>
